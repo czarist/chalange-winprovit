@@ -1,0 +1,23 @@
+<%- include('../layout/header'); %>
+
+<main>
+  <div class="jumbotron">
+    <h1><%= post.title %></h1>
+
+    <div class="row justify-content-center">
+
+      <div class="col-12">
+        <p><%= post.body %></p>
+        <span>Author:
+          <a href="/posts/<%= authorID %> ">
+            <%= author %>
+          </a>
+        </span>
+
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<%- include('../layout/footer'); %>

@@ -1,0 +1,45 @@
+<%- include('../layout/header'); %>
+
+<main>
+  <div class="jumbotron">
+    <h1>Blog - Author posts</h1>
+    <h4> Author: <strong><%= unitedObject.name %></strong></h4>
+    <p>
+      <strong><%= unitedObject.username %></strong>
+    </p>
+    <a href="mailto:<%= unitedObject.email %>">
+      <strong><%= unitedObject.email %></strong>
+    </a>
+    <p>
+      <strong><%= unitedObject.address %></strong>
+    </p>
+    <a href="tel:<%= unitedObject.phone %>">
+      <strong><%= unitedObject.phone %></strong>
+    </a>
+    <br>
+    <a href="http://<%= unitedObject.website %>">
+      <strong><%= unitedObject.website %></strong>
+    </a>
+    <p>
+      <strong><%= `${unitedObject.company}` %></strong>
+    </p>
+
+
+    <div class="row justify-content-start">
+      <div class="col-12">
+        <h1>Posts:</h1>
+      </div>
+
+      <% unitedObject.posts.forEach(function(post) { %>
+      <div class="col-xl-3 col-12 bg-white mr-2 mb-2 pb-5 pt-2">
+        <h6><%= post.title %> </h6>
+        <a href="/post/<%= post.id %> ">check post >></a>
+      </div>
+      <% }); %>
+
+    </div>
+
+  </div>
+</main>
+
+<%- include('../layout/footer'); %>

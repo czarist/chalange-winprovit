@@ -1,0 +1,43 @@
+<%- include('../layout/header'); %>
+
+<main>
+  <div class="jumbotron">
+    <h1>Blog</h1>
+    <p>Welcome to the Blog</p>
+
+    <div class="row justify-content-center">
+
+      <% users.forEach(function(user) { %>
+      <div class="col-xl-3 col-12 bg-white mr-2 mb-2 p-2">
+        <h4> <strong><%= user.name %></strong></h4>
+        <p>
+          <strong><%= user.username %></strong>
+        </p>
+        <a href="mailto:<%= user.email %>">
+          <strong><%= user.email %></strong>
+        </a>
+        <p>
+          <strong><%= `${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode}` %></strong>
+        </p>
+        <a href="tel:<%= user.phone %>">
+          <strong><%= user.phone %></strong>
+        </a>
+        <br>
+        <a href="http://<%= user.website %>">
+          <strong><%= user.website %></strong>
+        </a>
+        <p>
+          <strong><%= `${user.company.name}` %></strong>
+        </p>
+        <a href="posts/<%= `${user.id}` %>">
+          <h6>check Author posts >></h6>
+        </a>
+      </div>
+      <% }); %>
+
+    </div>
+
+  </div>
+</main>
+
+<%- include('../layout/footer'); %>
